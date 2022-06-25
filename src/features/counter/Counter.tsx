@@ -1,25 +1,31 @@
-import React, { useState } from 'react';
-
+import { useState } from 'react';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
+// Import der Reducer-Funktionen aus der Datei: counterSlice.ts
 import {
   decrement,
   increment,
   incrementByAmount,
   incrementAsync,
   incrementIfOdd,
-  selectCount,
+  selectCount, // inline definierter Selektor
 } from './counterSlice';
 import styles from './Counter.module.css';
 
 export function Counter() {
+  // Der useSelector-Hook stellt das Redux-Store-Objekt über die Slice des Counters bereit (Inline)
   const count = useAppSelector(selectCount);
+   // Wir rufen useDispatch auf und speichern den Rückgabewert in einer Variablen, dispatch.
+   // Dieser Hook gibt einen Referenzpunkt auf die Dispatch-Funktion aus dem Redux-Speicher zurück. 
+   // Mit ihm können Sie nach Bedarf Aktionen versenden.
   const dispatch = useAppDispatch();
   const [incrementAmount, setIncrementAmount] = useState('2');
 
   const incrementValue = Number(incrementAmount) || 0;
 
   return (
-    <div>
+    // Nachfolgender Code enthält alle Dispatcher, die die oben Importierten Reducer-Funktionen aufrufen
+    <div className="countContainer">
+      <h3 className="cHeader">Counter unter verschiedenen Bedingungen verändern</h3>
       <div className={styles.row}>
         <button
           className={styles.button}
@@ -48,19 +54,19 @@ export function Counter() {
           className={styles.button}
           onClick={() => dispatch(incrementByAmount(incrementValue))}
         >
-          Add Amount
+          Betrag erhöhen
         </button>
         <button
           className={styles.asyncButton}
           onClick={() => dispatch(incrementAsync(incrementValue))}
         >
-          Add Async
+          Assynchron hinzufügen
         </button>
         <button
           className={styles.button}
           onClick={() => dispatch(incrementIfOdd(incrementValue))}
         >
-          Add If Odd
+          Betrag erhöhen, wenn ungerade
         </button>
       </div>
     </div>

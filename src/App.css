@@ -1,10 +1,30 @@
 .App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
+.countContainer {
+  width: 100%;
+}
+
+.cHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 200;
+  margin: 1em 0;
+  height: 60px;
+  width: 100%;
+}
+
 .App-logo {
-  height: 40vmin;
+  height: 10vmin;
   pointer-events: none;
+  margin-right: 20px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -13,13 +33,31 @@
   }
 }
 
-.App-header {
-  min-height: 100vh;
+.App-counter {
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 1vmin);
+}
+
+h1 {
+  font-weight: 100;
+  font-size: 2.4rem;
+  color: white;
+}
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 12vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .App-link {
@@ -37,3 +75,102 @@
     transform: translateY(0px);
   }
 }
+
+
+/* ------------------------------------------------- */
+
+.loginBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.btnlogin {
+    color: #ffc400;
+    background-color: #1b2f31;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3em;
+    width: 8em;
+    font-size: large;
+    font-weight: 300;
+    cursor: pointer;
+  }
+
+  .btnlogout {
+    color: #ffffff;
+    background-color: #1b2f31;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3em;
+    width: 8em;
+    font-size: large;
+    font-weight: 300;
+    cursor: pointer;
+  }
+
+  .btncolor {
+    color: #ffc400;
+    background-color: #1b2f31;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3em;
+    width: 8em;
+    font-size: large;
+    font-weight: 300;
+    cursor: pointer;
+    margin: 25px 25px 0 0;
+  }
+
+  .changeColor {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    width: 60%;
+    border: #282c34 dotted 1px;
+    padding: 20px 0;
+  }
+
+  input {
+    min-height: 30px;
+    font-size: 1.6rem;
+    font-weight: 300;
+    padding: 6px;
+    min-width: 40px;
+    width: 80%;
+    margin: 12px;
+    height: 1.4em;
+  }
+
+  .btn-artice {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    flex-direction: column;
+    height: 80px;
+  }
+
+  .userList {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 200px;
+    font-size: 1.4rem;
+    font-weight: 200;
+    padding: 20px;
+  }
+
+  .viewer {
+    width: 100%;
+  }
